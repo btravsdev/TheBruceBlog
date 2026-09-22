@@ -1,0 +1,119 @@
+/* Shared by the front end and editor. Values inherit theme.json tokens. */
+html { background-color: var(--wp--preset--color--wall-bottom); }
+body {
+	position: relative;
+	isolation: isolate;
+	min-height: 100vh;
+	background: transparent;
+}
+/* Viewport-tall wall wash; does not stretch with page height. */
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0 0 auto;
+	z-index: -1;
+	width: 100%;
+	height: 100vh;
+	pointer-events: none;
+	background: var(--wp--preset--gradient--shop-wall);
+}
+.wp-site-blocks { padding-block: 12px 48px; }
+.chesperry-header, .chesperry-footer { max-width: var(--wp--style--global--content-size); margin-inline: auto; }
+.chesperry-header { border-radius: var(--wp--custom--header-radius); width: 100%; }
+.chesperry-header .chesperry-logo { margin: 0; line-height: 0; }
+.chesperry-header .chesperry-logo a { display: block; text-decoration: none; }
+.chesperry-header .chesperry-logo img { display: block; width: 56px; height: 56px; }
+.chesperry-header .chesperry-search { display: flex; align-items: center; justify-content: center; color: var(--wp--preset--color--indigo); text-decoration: none; line-height: 0; }
+.chesperry-header .chesperry-search:hover { color: var(--wp--preset--color--purple); }
+.chesperry-header .chesperry-search svg { display: block; }
+.chesperry-search-page { margin-bottom: var(--wp--preset--spacing--50); }
+.chesperry-search-page .wp-block-query-title { margin-bottom: 16px; }
+.chesperry-search-page .wp-block-search { max-width: 28rem; margin-inline: auto; }
+.chesperry-feed .wp-block-post-template { display: grid; gap: var(--wp--preset--spacing--80); padding: 0; }
+.chesperry-feed .wp-block-post { margin: 0; min-width: 0; }
+.chesperry-poster { 
+  box-sizing: border-box; 
+  background: var(--wp--preset--color--poster); 
+  padding: 10px; 
+  border-radius: var(--wp--custom--poster-radius); 
+  box-shadow: var(--wp--custom--poster-shadow); 
+  text-align: center; 
+  overflow-wrap: anywhere; 
+  text-box-trim: trim-both;
+}
+.chesperry-poster > * { margin-block: 0; }
+
+.chesperry-poster .wp-block-post-title { color: var(--wp--preset--color--purple); }
+.chesperry-poster .wp-block-post-title a { color: inherit; text-decoration: none; }
+.chesperry-poster .wp-block-post-title a:hover { color: var(--wp--preset--color--indigo); }
+.chesperry-band { position: relative; isolation: isolate; display: block; width: 100%; box-sizing: border-box; padding: 18px 12px; }
+.chesperry-band::before { content: ""; position: absolute; z-index: -1; inset: 0; background: url('../images/paint-band.svg') center / 100% 100% no-repeat; }
+.chesperry-band a { color: inherit; }
+.chesperry-poster .wp-block-post-terms { color: var(--wp--preset--color--red); }
+.chesperry-poster .wp-block-post-content { max-width: none; }
+.chesperry-poster .wp-block-post-content > * { max-width: var(--wp--custom--body-measure); margin-inline: auto; }
+.chesperry-poster .wp-block-post-content > :first-child { margin-top: 0; }
+.chesperry-poster .wp-block-post-content > :last-child { margin-bottom: 0; }
+.chesperry-poster .wp-block-post-content > :is(.wp-block-embed,.wp-block-image,.wp-block-video,.alignwide,.alignfull) { width: 100%; max-width: var(--wp--custom--media-width); margin-inline: auto; }
+.chesperry-poster :is(img,video) { max-width: 100%; height: auto; }
+.chesperry-poster iframe { max-width: 100%; }
+.chesperry-poster iframe:is([src*="youtube.com"],[src*="youtube-nocookie.com"],[src*="youtu.be"]) { display: block; position: static; width: 100%; height: auto; aspect-ratio: 16 / 9; border: 0; }
+/* Our aspect ratio replaces core's spacer only for YouTube wrappers. */
+.chesperry-poster .wp-block-embed-youtube .wp-block-embed__wrapper::before { display: none; }
+.chesperry-poster :is(ul,ol,blockquote,pre) { text-align: start; }
+.chesperry-poster pre { overflow-x: auto; }
+.chesperry-poster .wp-block-table { overflow-x: auto; }
+.chesperry-pagination { padding-block: 36px; font-family: var(--wp--preset--font-family--sign); font-size: 18px; }
+.chesperry-pagination .page-numbers { padding: 6px; }
+.chesperry-footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--wp--preset--color--border-warm); text-align: center; }
+.chesperry-footer .wp-block-site-title { font-size: 20px; }
+:where(.wp-site-blocks,.editor-styles-wrapper) a:focus-visible { outline: 3px solid var(--wp--preset--color--indigo); outline-offset: 4px; }
+@media (max-width: 600px) {
+ .wp-site-blocks { padding-block: 24px; }
+ .chesperry-header { margin-bottom: 32px; }
+ .chesperry-poster { padding: 20px; }
+ .chesperry-feed .wp-block-post-template { gap: 40px; }
+ .chesperry-poster > * + * { margin-block-start: 24px; }
+}
+
+/* Mikrobe's wdth axis supports 75–125; adjust headlineWidth in theme.json. */
+:where(.wp-site-blocks, .editor-styles-wrapper) :is(h1, h2, h3, h4, h5, h6, .wp-block-site-title) {
+ font-variation-settings: "wdth" var(--wp--custom--headline-width, 100);
+}
+
+.wp-block-post-title {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-variation-settings: "wdth" var(--wp--custom--headline-width, 125);
+  font-size: 5rem;
+  line-height: 0.9;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 600px) {
+  .wp-block-post-title {
+    font-size: 3rem;
+  }
+}
+
+.wp-block-paragraph {
+  font-size: 16px;
+  text-wrap: balance;
+}
+
+:where(.wp-site-blocks) > * {
+  margin-block-start: -5px;
+}
+
+.chesperry-band.wp-block-post-date {
+  margin-top: 24px;
+}
+
+.chesperry-band.wp-block-post-date a,
+.chesperry-band.wp-block-post-terms a {
+  text-decoration: none;
+}
+.chesperry-band.wp-block-post-date a:hover,
+.chesperry-band.wp-block-post-terms a:hover {
+  color: var(--wp--preset--color--orange);
+}

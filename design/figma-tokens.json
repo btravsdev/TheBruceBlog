@@ -1,0 +1,87 @@
+{
+  "theme": {
+    "name": "The Bruce Blog Theme",
+    "slug": "tbbt"
+  },
+  "colors": {
+    "backgroundGradientStart": "#E0E1DC",
+    "backgroundGradientEnd": "#B4AA91",
+    "poster": "#FFFFFF",
+    "text": "#111111",
+    "textMuted": "#767676",
+    "purple": "#3321A6",
+    "indigo": "#32378C",
+    "yellow": "#F2CB07",
+    "orange": "#BF4904",
+    "red": "#BF1717",
+    "borderWarm": "#D7C7A8"
+  },
+  "typography": {
+    "headline": {
+      "family": "Mikrobe Variable",
+      "source": "Adobe Fonts",
+      "status": "required custom font; not currently active in Figma",
+      "weight": "variable axis unspecified",
+      "sizePx": 48,
+      "lineHeight": "100%",
+      "letterSpacing": "3%"
+    },
+    "postDate": {
+      "family": "CC Sign Language",
+      "source": "Adobe Fonts",
+      "status": "required custom font; not currently active in Figma",
+      "weight": "unspecified",
+      "sizePx": 10,
+      "lineHeight": "normal",
+      "letterSpacing": "0"
+    },
+    "postMeta": {
+      "family": "CC Sign Language",
+      "source": "Adobe Fonts",
+      "status": "required custom font; not currently active in Figma",
+      "weight": "unspecified",
+      "sizePx": 20,
+      "lineHeight": "normal",
+      "letterSpacing": "1%",
+      "textTransform": "uppercase"
+    },
+    "postBody": {
+      "family": "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+      "figmaProxy": "Inter",
+      "weight": 400,
+      "sizePx": 14,
+      "lineHeight": "160%",
+      "letterSpacing": "0"
+    }
+  },
+  "layout": {
+    "desktopCanvasPx": 1440,
+    "contentWidthPx": 680,
+    "bodyMeasurePx": 538,
+    "mediaMaxWidthPx": 630,
+    "desktopPageGutterPx": 380,
+    "postPaddingPx": 28,
+    "postInternalGapPx": 30,
+    "postGapPx": 80,
+    "mobileBreakpointPx": null,
+    "mobileGutterPx": null
+  },
+  "video": {
+    "aspectRatio": "16:9",
+    "width": "100%",
+    "maxWidthPx": 630,
+    "height": "derived from width",
+    "mobileBehavior": "scale fluidly to the poster width while preserving 16:9"
+  },
+  "surface": {
+    "postRadiusPx": 2,
+    "headerRadiusPx": 4,
+    "shadow": {
+      "xPx": 0,
+      "yPx": 6,
+      "blurPx": 18,
+      "spreadPx": 0,
+      "color": "rgba(0, 0, 0, 0.0784)"
+    }
+  }
+}
